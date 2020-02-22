@@ -7,12 +7,19 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "npx prettier --config .prettierrc.js --write '**/*.+(js|css)'"
+    "format": "npx prettier --config .prettierrc.js --write '**/*.+(js|html|css)'"
+  },
+  "author": "Thiago Rodrigues",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thiago92Rodrigues/react-tetris.git"
+  },
+  "homepage": "https://github.com/Thiago92Rodrigues/react-tetris#readme",
+  "bugs": {
+    "url": "https://github.com/Thiago92Rodrigues/react-tetris/issues"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.4.0",
