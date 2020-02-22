@@ -110,7 +110,7 @@ const Tetris = () => {
       role="button"
       tabIndex="0"
       onKeyDown={(event) => move(event)}
-      onKeyUp={(event) => keyUp(event)}
+      onKeyUp={keyUp}
     >
       <StyledTetris>
         <Stage stage={stage} />
@@ -124,7 +124,7 @@ const Tetris = () => {
               <Display text={`Level: ${level}`} />
             </div>
           )}
-          <StartButton onClick={startGame} callback={startGame} />
+          <StartButton callback={startGame} />
         </aside>
       </StyledTetris>
     </StyledTetrisWrapper>
