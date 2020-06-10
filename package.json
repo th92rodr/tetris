@@ -1,22 +1,21 @@
 {
   "name": "react-tetris",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "author": "Thiago Rodrigues",
+  "license": "ISC",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "npx prettier --config .prettierrc.js --write '**/*.+(js|html|css)'"
+    "format": "prettier --config .prettierrc.js --write '**/*.+(js|html|css)'"
   },
-  "author": "Thiago Rodrigues",
-  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Thiago92Rodrigues/react-tetris.git"
+    "url": "git+https://github.com/th92rodr/react-tetris.git"
   },
   "bugs": {
-    "url": "https://github.com/Thiago92Rodrigues/react-tetris/issues"
+    "url": "https://github.com/th92rodr/react-tetris/issues"
   },
   "dependencies": {
     "react": "^16.12.0",
@@ -38,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
   }
 }
