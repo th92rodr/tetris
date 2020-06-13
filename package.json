@@ -1,5 +1,5 @@
 {
-  "name": "react-tetris",
+  "name": "tetris",
   "version": "1.0.0",
   "author": "Thiago Rodrigues",
   "license": "ISC",
@@ -12,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/th92rodr/react-tetris.git"
+    "url": "git+https://github.com/th92rodr/tetris.git"
   },
   "bugs": {
-    "url": "https://github.com/th92rodr/react-tetris/issues"
+    "url": "https://github.com/th92rodr/tetris/issues"
   },
   "dependencies": {
     "react": "^16.12.0",
