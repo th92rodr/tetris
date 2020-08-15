@@ -7,17 +7,17 @@ export const usePlayer = () => {
   const [player, setPlayer] = useState({
     pos: { x: 0, y: 0 },
     tetromino: TETROMINOS[0].shape,
-    collided: false
+    collided: false,
   });
 
   const rotate = (matrix, direction) => {
     // Make the rows to become cols (transpose)
     const rotatedTetro = matrix.map((_, index) =>
-      matrix.map((col) => col[index])
+      matrix.map(col => col[index]),
     );
 
     // Reverse each row to get a rotated matrix
-    if (direction > 0) return rotatedTetro.map((row) => row.reverse());
+    if (direction > 0) return rotatedTetro.map(row => row.reverse());
 
     return rotatedTetro.reverse();
   };
@@ -42,11 +42,11 @@ export const usePlayer = () => {
   };
 
   const updatePlayerPos = ({ x, y, collided }) => {
-    setPlayer((prev) => {
+    setPlayer(prev => {
       return {
         ...prev,
         pos: { x: (prev.pos.x += x), y: (prev.pos.y += y) },
-        collided
+        collided,
       };
     });
   };
@@ -55,7 +55,7 @@ export const usePlayer = () => {
     setPlayer({
       pos: { x: STAGE_WIDTH / 2 - 2, y: 0 },
       tetromino: randomTetromino().shape,
-      collided: false
+      collided: false,
     });
   }, []);
 

@@ -8,10 +8,10 @@ export const useStage = (player, resetPlayer) => {
   useEffect(() => {
     setRowsCleared(0);
 
-    const sweepRows = (newStage) =>
+    const sweepRows = newStage =>
       newStage.reduce((acc, row) => {
-        if (row.findIndex((cell) => cell[0] === 0) === -1) {
-          setRowsCleared((prev) => prev + 1);
+        if (row.findIndex(cell => cell[0] === 0) === -1) {
+          setRowsCleared(prev => prev + 1);
           acc.unshift(new Array(newStage[0].length).fill([0, 'clear']));
           return acc;
         }
@@ -19,10 +19,10 @@ export const useStage = (player, resetPlayer) => {
         return acc;
       }, []);
 
-    const updateStage = (prevStage) => {
+    const updateStage = prevStage => {
       // First flush the stage
-      const newStage = prevStage.map((row) =>
-        row.map((cell) => (cell[1] === 'clear' ? [0, 'clear'] : cell))
+      const newStage = prevStage.map(row =>
+        row.map(cell => (cell[1] === 'clear' ? [0, 'clear'] : cell)),
       );
 
       // Then draw the tetromino
@@ -31,7 +31,7 @@ export const useStage = (player, resetPlayer) => {
           if (value !== 0) {
             newStage[y + player.pos.y][x + player.pos.x] = [
               value,
-              `${player.collided ? 'merged' : 'clear'}`
+              `${player.collided ? 'merged' : 'clear'}`,
             ];
           }
         });
@@ -46,13 +46,13 @@ export const useStage = (player, resetPlayer) => {
       return newStage;
     };
 
-    setStage((prev) => updateStage(prev));
+    setStage(prev => updateStage(prev));
   }, [
     player.collided,
     player.pos.x,
     player.pos.y,
     player.tetromino,
-    resetPlayer
+    resetPlayer,
   ]);
 
   return [stage, setStage, rowsCleared];

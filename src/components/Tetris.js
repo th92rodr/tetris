@@ -24,12 +24,12 @@ const Tetris = () => {
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
-    rowsCleared
+    rowsCleared,
   );
 
   console.log('re-render');
 
-  const movePlayer = (direction) => {
+  const movePlayer = direction => {
     if (!checkCollision(player, stage, { x: direction, y: 0 })) {
       updatePlayerPos({ x: direction, y: 0 });
     }
@@ -49,7 +49,7 @@ const Tetris = () => {
   const drop = () => {
     // Increase level when player has cleared 10 rows
     if (rows > (level + 1) * 10) {
-      setLevel((prev) => prev + 1);
+      setLevel(prev => prev + 1);
       // Also increase speed
       setDropTime(1000 / (level + 1) + 200);
     }
@@ -106,16 +106,16 @@ const Tetris = () => {
 
   return (
     <StyledTetrisWrapper
-      role="button"
-      tabIndex="0"
-      onKeyDown={(event) => move(event)}
+      role='button'
+      tabIndex='0'
+      onKeyDown={event => move(event)}
       onKeyUp={keyUp}
     >
       <StyledTetris>
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
-            <Display gameOver={gameOver} text="Game Over" />
+            <Display gameOver={gameOver} text='Game Over' />
           ) : (
             <div>
               <Display text={`Score: ${score}`} />
