@@ -8,20 +8,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pretty": "prettier --config .prettierrc.js --write '*/**/*.{js,html,css}'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/th92rodr/tetris.git"
-  },
-  "bugs": {
-    "url": "https://github.com/th92rodr/tetris/issues"
+    "pretty": "prettier --config .prettierrc.json --write \"./src/**/*.{js,html,css}\""
   },
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.4.0",
     "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,8 +33,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "prettier": "^2.0.5"
   }
 }
